@@ -309,6 +309,32 @@ URL="https://github.com/pascalgn/repository-name/pull/123"
 
 Install dependencies with `yarn`, and finally run `yarn it` (or `npm run it`).
 
+## Rebuilding project
+
+To rebuild project one need to run webpack. 
+
+Some usefull guide: 
+* how GHA are structured:
+https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
+
+* webpack installation
+https://webpack.js.org/guides/getting-started/#:~:text=Webpack%20is%20used%20to%20compile,are%20out%20in%20the%20community.
+
+I had some troubles, when tryied to run webpack directly on changed code. Had to revert changes, run some dry runs, play with installation of webpack-cli and then it started to work and change dist. 
+
+```bash
+997  brew install node
+998  npm install -g grunt-cli //to check if npm works
+1004  brew install yarn
+1012  npx webpack //did not work, error returned by lint
+1013  npm install webpack-cli
+1019  npm uninstall webpack-cli
+1026  npm install --save-dev prettier-eslint
+1033  npm uninstall --save-dev prettier-eslint
+1034  npm uninstall  prettier-eslint\n
+1036  npx webpack
+```
+
 ## License
 
 [MIT](./LICENSE)
