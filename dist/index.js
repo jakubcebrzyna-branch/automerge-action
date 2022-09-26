@@ -984,7 +984,7 @@ const {
 } = __nccwpck_require__(6979);
 
 const MAYBE_READY = ["clean", "has_hooks"];
-const NOT_READY = ["dirty", "draft"];
+const NOT_READY = ["dirty", "draft", "unknown", "unstable"];
 
 const PR_PROPERTY = new RegExp("{pullRequest.([^}]+)}", "g");
 
